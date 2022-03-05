@@ -1,0 +1,110 @@
+﻿@model SignupViewModel
+@{
+    ViewData["Title"] = "Signup";
+}
+
+<h1 class="display-4">Customer Sign Up Form</h1>
+
+<div class="row">
+    <div class="col">
+        <form asp-action="Signup" asp-controller="Customer">
+            <div class="row mb-3">
+                &nbsp;
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Name" class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Username" class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Password" class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="ConfirmPassword" class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Contact" class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <input asp-for="Contact" class="form-control" />
+                    <i class="fst-italic display-bl">Ex. +91 99999 99999</i>
+                    <span asp-validation-for="Contact" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Country" class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    @*<input asp-for="Country" class="form-control" />*@
+                    @await Component.InvokeAsync("Country",new { id=2, fieldKeyName = "Country" })
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="City" class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Gender" class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <input asp-for="Gender" type="radio" value="Male" class="form-check-input" id="iMale" />
+                    <label asp-for="Gender" class="form-check-label" for="iMale">Male</label>
+                    <input asp-for="Gender" type="radio" value="Female" class="form-check-input" id="iFemale" />
+                    <label asp-for="Gender" class="form-check-label" for="iFemale">Female</label>
+                    <input asp-for="Gender" type="radio" value="Unspecified" class="form-check-input" id="iUnspecified" />
+                    <label asp-for="Gender" class="form-check-label" for="iUnspecified">Unspecified</label>
+                    <span asp-validation-for="Gender" class="text-danger display-bl"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Terms" class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <input asp-for="Terms" class="form-check-input" />
+                    <span asp-validation-for="Terms" class="text-danger display-bl"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <button type="submit" class="btn btn-primary">SignUp</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col">
+    </div>
+</div>
+@section Scripts{
+
+<partial name="_ValidationScriptsPartial" />
+<script>
+        jQuery.validator.unobtrusive.adapters.add("checkbox", function (options) {
+        if (options.element.tagName.toUpperCase() == "INPUT" && options.element.type.toUpperCase() === "CHECKBOX") {
+            options.rules["required"] = true;
+            if (options.message) {
+                options.messages["required"] = options.message;
+            }
+        }
+    });
+</script>
+}
+
+
