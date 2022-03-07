@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wCg7Ngj66eHRnWGaxR/n6EcrZQTOQ77EdVQQsT5RqKUTr82uzNiuoTJIFq8jCpCFGyzN1IdOwF3UOaxRfuOlcg==",
+  "dgSpecHash": "pDZocKFwUw/8ZxoWlFdktqIdPgOqteisMOqGzFryPOBTPBACtt9ArtEeoTkXFLLuZR2a1motmNsQ4t1Y8SxYYQ==",
   "success": true,
-  "projectFilePath": "C:\\Personal\\Dot Net Tricks\\B315\\B315_01_MVC6_SignUp_ClientSide_ServerSide\\B315_01_MVC6_SignUp_ClientSide_ServerSide\\B315_01_MVC6_SignUp_ClientSide_ServerSide.csproj",
+  "projectFilePath": "C:\\Personal\\Repos\\B315--signup-page-with-client-side-and-server-side-validations\\B315_01_MVC6_SignUp_ClientSide_ServerSide.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SOUMYA\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\SOUMYA\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

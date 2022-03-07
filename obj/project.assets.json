@@ -8630,11 +8630,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Personal\\Dot Net Tricks\\B315\\B315_01_MVC6_SignUp_ClientSide_ServerSide\\B315_01_MVC6_SignUp_ClientSide_ServerSide\\B315_01_MVC6_SignUp_ClientSide_ServerSide.csproj",
+      "projectUniqueName": "C:\\Personal\\Repos\\B315--signup-page-with-client-side-and-server-side-validations\\B315_01_MVC6_SignUp_ClientSide_ServerSide.csproj",
       "projectName": "B315_01_MVC6_SignUp_ClientSide_ServerSide",
-      "projectPath": "C:\\Personal\\Dot Net Tricks\\B315\\B315_01_MVC6_SignUp_ClientSide_ServerSide\\B315_01_MVC6_SignUp_ClientSide_ServerSide\\B315_01_MVC6_SignUp_ClientSide_ServerSide.csproj",
+      "projectPath": "C:\\Personal\\Repos\\B315--signup-page-with-client-side-and-server-side-validations\\B315_01_MVC6_SignUp_ClientSide_ServerSide.csproj",
       "packagesPath": "C:\\Users\\SOUMYA\\.nuget\\packages\\",
-      "outputPath": "C:\\Personal\\Dot Net Tricks\\B315\\B315_01_MVC6_SignUp_ClientSide_ServerSide\\B315_01_MVC6_SignUp_ClientSide_ServerSide\\obj\\",
+      "outputPath": "C:\\Personal\\Repos\\B315--signup-page-with-client-side-and-server-side-validations\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SOUMYA\\AppData\\Roaming\\NuGet\\NuGet.Config",
