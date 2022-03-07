@@ -49,16 +49,15 @@
             </div>
             <div class="row mb-3">
                 <label asp-for="Country" class="col-sm-4 control-label"></label>
-                <div class="col-sm-8">
-                    @*<input asp-for="Country" class="form-control" />*@
-                    @await Component.InvokeAsync("Country",new { id=2, fieldKeyName = "Country" })
+                <div class="col-sm-8">                    
+                    <select asp-for="Country" class="form-select" aria-label="Select Country" id="Country"></select>
                     <span asp-validation-for="Country" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-3">
                 <label asp-for="City" class="col-sm-4 control-label"></label>
                 <div class="col-sm-8">
-                    <input asp-for="City" class="form-control" />
+                    <select asp-for="City" class="form-select" aria-label="Select City" id="City"></select>
                     <span asp-validation-for="City" class="text-danger"></span>
                 </div>
             </div>
@@ -103,6 +102,64 @@
                 options.messages["required"] = options.message;
             }
         }
+
+
+        $(document).ready(function () { 
+
+            // populate country drop-down list
+            var ddlCountry = $('#Country');
+            ddlCountry.append($("<option></option>").val('').html('Select Country'));
+
+            $.ajax({
+                url: 'https://localhost:7022/api/Data/Countries',
+                type: 'GET',
+                dataType: 'json',
+                success: function (d) {
+                    $.each(d, function (i, country) {
+                        ddlCountry.append($("<option></option>").val(country.countryID).html(country.countryName));
+                    });
+                },
+                error: function () {
+                    alert('Error!');
+                }
+            });
+
+
+
+            //populate city drop-down by countryid
+            $('#Country').change(function() {
+                var CountryID = parseInt($(this).val());
+                if (!isNaN(CountryID)) {
+
+                    var ddlCity = $('#City');
+                    ddlCity.append($("<option></option>").val('').html('Please wait ...'));
+
+                    $.ajax({
+                        url: 'https://localhost:7022/api/Data/Cities',
+                        type: 'GET',
+                        dataType: 'json',
+                        data: { CountryID: CountryID },
+                        success: function (d) {
+
+
+                            ddlCity.empty(); // Clear the plese wait  
+                            ddlCity.append($("<option></option>").val('').html('Select City'));
+                            $.each(d, function (i, city) {
+                                ddlCity.append($("<option></option>").val(city.cityID).html(city.cityName));
+                            });
+                        },
+                        error: function () {
+                            alert('Error!');
+                        }
+                    });
+                }
+            });
+
+
+        });
+
+
+
     });
 </script>
 }

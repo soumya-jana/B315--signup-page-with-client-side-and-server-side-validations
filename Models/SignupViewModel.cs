@@ -25,10 +25,10 @@ namespace B315_01_MVC6_SignUp_ClientSide_ServerSide.Models
         [RegularExpression("\\+[0-9]{2}\\s+[0-9]{5}\\s+[0-9]{5}", ErrorMessage = "Please enter correct contact number.")]
         public string? Contact { get; set; }
 
-
+        [Required(ErrorMessage = "Please select country.")]
         public string Country { get; set; }
 
-
+        [Required(ErrorMessage = "Please select city.")]
         public string City { get; set; }
 
         [Required(ErrorMessage = "Please choose gender.")]
