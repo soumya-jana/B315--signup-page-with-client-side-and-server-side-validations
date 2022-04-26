@@ -36,7 +36,12 @@ namespace B315_01_MVC6_SignUp_ClientSide_ServerSide.Models
 
         [Display(Name = "Accept Terms")]
         [ValidateCheckBox(ErrorMessage = "Please accept terms.")]
+
+        // terms & conditions
         public bool Terms { get; set; }
+
+
+
 
     }
 }
